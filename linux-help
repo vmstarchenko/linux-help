@@ -1,0 +1,25 @@
+#!/bin/bash
+
+su username                 # Залогиниться в данном шеле под другим пользователем
+sudo adduser username       # Создать пользователя
+sudo adduser username group # Добавить группу пользователя
+
+
+# Просмотр места на жестком диске
+df -h     # Из консоли
+baobab    # Оконный
+k4dirstat # Другой оконный (как на винде)
+
+
+# Вырезать кусок из видео
+ffmpeg -ss 01:19:00 -t 00:05:00 -i in-file.avi -qscale 0 out-file.avi # ss - start; t - len
+ffmpeg -i input.avi -r 25 -f image2 images%05d.png # раскадрировать видео; r - rate
+
+find . -name \*.pyc -delete # Удалить все файлы в поддиректориях соотвестсвующие шаблону
+find start_dir -type f -name "*.py" -exec grep -H "pattern" {} \; # найти файлы в поддиректории start_dir *.py содеращие pattern
+
+# ssl
+ssh user@host -i ~/.ssh/key.pem # chmod 600 key.pem
+
+df -k # Список точка монтирования, файловая система, имя файловой системы, размер
+lsblk # Список подмонтированных и не подмонтированных дисков

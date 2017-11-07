@@ -1,0 +1,4 @@
+sudo apt-get install libopenmpi-dev openmpi-bin
+sudo apt-get install mpich2 mpich2-doc
+sudo apt-get install libcr-dev
+sudo apt-get install libboost-all-dev
