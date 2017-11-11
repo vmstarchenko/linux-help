@@ -1,5 +1,6 @@
 sudo apt install nvidia-cuda-toolkit
 sudo shutdown -r 0
+# switch to tty1
 sudo apt install nvidia-375 # ??
 sudo apt install nvidia-common nvidia-prime nvidia-settings
 sudo shutdown -r 0
