@@ -4,6 +4,10 @@ sudo apt-add-repository ppa:git-core/ppa
 sudo apt-get update
 sudo apt-get install git
 
-sudo apt-get install scrot tree adobe-flashplugin sqlitebrowser optipng
+sudo apt-get install scrot tree adobe-flashplugin sqlitebrowser optipng xdotool
+
+# scrot --- screenshots
+# xdotool --- new tabs in terminal
+# optipng --- convert pngs
 
 # tex
