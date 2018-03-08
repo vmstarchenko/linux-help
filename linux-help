@@ -27,3 +27,11 @@ lsblk # Список подмонтированных и не подмонтир
 sudo lshw # Полная информация о системе
 sudo lshw -html > file.html # Красивее
 lsblk # инфо по дискам
+
+
+uname -a              # kernel version
+echo $DESKTOP_SESSION # desktop environment
+lsb_release -a        # distro info
+
+sensors               # Температура cpu и обороты вентилятора
+
