@@ -15,7 +15,7 @@ cat /proc/sys/vm/swappiness
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt update
 sudo apt upgrade
-sudo apt install c++-7
+## sudo apt install c++-7
 
 # kernal
 sudo apt install linux-image-next-sunxi linux-headers-next-sunxi linux-dtb-next-sunxi linux-u-boot-orangepiplus2e-next linux-xenial-root-orangepiplus2e
@@ -27,6 +27,6 @@ sudo apt install build-essential git libexpat1-dev libssl-dev zlib1g-dev libncur
 export CC="gcc-7" CXX="c++-7"
 echo $CC
 ./configure --enable-optimizations 
-make -j4
+make PROFILE_TASK="-m test.regrtest --pgo -j4" -j4 
 make test
 sudo make install
