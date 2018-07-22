@@ -1,0 +1,31 @@
+# initial
+sudo apt install tmux
+tmux
+sudo apt update
+sudo apt upgrade
+
+# locale
+sudo update-locale LC_ALL=en_US.UTF-8
+
+# swap
+sudo sysctl -w vm.swappiness=20
+cat /proc/sys/vm/swappiness
+
+# gcc
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
+sudo apt update
+sudo apt upgrade
+
+# kernal
+sudo apt install linux-image-next-sunxi linux-headers-next-sunxi linux-dtb-next-sunxi linux-u-boot-orangepiplus2e-next linux-xenial-root-orangepiplus2e
+shutdown -h 0
+
+
+# python
+sudo apt install build-essential git libexpat1-dev libssl-dev zlib1g-dev libncurses5-dev libbz2-dev liblzma-dev libsqlite3-dev libffi-dev tcl-dev libgdbm-dev libreadline-dev tk tk-dev
+export CC="gcc-7" CXX="c++-7"
+echo $CC
+./configure --enable-optimizations 
+make -j4
+make test
+sudo make install
