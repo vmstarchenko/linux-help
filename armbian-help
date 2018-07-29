@@ -28,3 +28,39 @@ sudo apt install build-essential git libexpat1-dev libssl-dev zlib1g-dev libncur
 make PROFILE_TASK="-m test.regrtest --pgo -j4" -j4 
 make test
 sudo make install
+
+
+# programs
+sudo apt install tree
+sudo apt install gdb
+sudo apt install sox
+sudo apt install ffmpeg
+
+# other
+sudo apt install libjack-dev
+sudo apt install libasound2-dev
+sudo apt install libjpeg-dev
+sudo apt install libblas-dev liblapack-dev
+
+
+#### custom .bashrc ###########################################################
+
+export PATH=~/bin:$PATH
+alias on="source venv/bin/activate "
+alias off="deactivate "
+
+function __jupyter() { "jupyter" $@ --no-browser ; } ;
+alias jupyter="__jupyter "
+
+if { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+  # /etc/update-motd.d/10-header
+  /etc/update-motd.d/30-sysinfo
+  # /etc/update-motd.d/35-tips
+  # /etc/update-motd.d/40-updates
+  # /etc/update-motd.d/41-armbian-config
+  # /etc/update-motd.d/98-autoreboot-warn
+else
+  tmux attach || tmux
+fi
+
+export QT_QPA_PLATFORM="offscreen"
